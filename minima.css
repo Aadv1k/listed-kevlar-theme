@@ -8,6 +8,7 @@ body.dark {
   --clr-bg: #1c1917;
   --clr-hr: #1e293b;
   --clr-mono: white;
+  --clr-pre: #44403c;
 }
 
 body.light {
@@ -37,7 +38,17 @@ body {
 
 p {
   line-height: 1.2;
-  max-width: 60ch;
+  margin-block: 1rem;
+}
+
+ul,ol {
+  margin-left: 1rem;
+}
+
+pre {
+  background: var(--clr-pre);
+  padding-inline: .5rem;
+  border-radius: 3px;
 }
 
 h1,h2,h3 {
