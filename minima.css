@@ -1,14 +1,15 @@
 :root {
   --font-sans: Helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
   --font-serif: Georgia, Times new roman;
+  --font-mono: 'Cascadia Code', 'Ubuntu Mono', 'DejaVu Sans Mono', Consolas, monospace;
 }
 
 body.dark {
   --clr-text: #e7e5e4;
   --clr-bg: #1c1917;
-  --clr-hr: #1e293b;
+  --clr-hr: #292524;
   --clr-mono: white;
-  --clr-pre: #44403c;
+  --clr-pre: #292524;
 }
 
 body.light {
@@ -16,6 +17,7 @@ body.light {
   --clr-mono: black;
   --clr-bg: #e7e5e4;
   --clr-hr: #a8a29e;
+  --clr-pre: #d4d4d4;
 }
 
 * {
@@ -37,12 +39,21 @@ body {
 }
 
 p {
-  line-height: 1.2;
+  line-height: 1.4;
   margin-block: 1rem;
 }
 
-ul,ol {
+ul:not(.listing),ol {
   margin-left: 1rem;
+}
+
+ul li:not(.list_itm), ol {
+  margin-block: .5rem;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 1rem;
 }
 
 pre {
@@ -92,9 +103,13 @@ nav.navbar {
   color: inherit;
 }
 
-.list__itm a {
+.theme-btn {
+  background: none;
+  font-size: 1rem;
+  border: none;
+  text-decoration: underline;
   color: var(--clr-text);
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .list__itm {
@@ -103,21 +118,18 @@ nav.navbar {
   justify-content: space-between;
   width: 100%;
   font-family: var(--font-serif);
-  margin-block: .25rem;
+  margin-block: .5rem;
 }
 
-.theme-btn {
-  background: none;
-  font-size: 1rem;
-  align-self: baseline;
-  border: none;
-  text-decoration: underline;
+.list__itm a {
   color: var(--clr-text);
-  cursor: pointer;
+  text-decoration: none;
 }
+
 
 .list__itm time {
   font-size: .95rem;
+  position: relative;
 }
 
 .list__hr {
@@ -128,4 +140,24 @@ nav.navbar {
   border-left: none;
   border-bottom: none;
   border-right: none;
+}
+
+@media screen and (max-width: 540px) {
+  body {
+    width: 90%;
+  }
+
+  .listing {
+    gap: 1.25rem;
+  }
+
+  .list__itm {
+    justify-content: normal;
+    flex-direction: column;
+  }
+
+
+  .list__hr {
+    display: none;
+  }
 }
