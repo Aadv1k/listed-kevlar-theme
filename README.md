@@ -7,3 +7,8 @@ config.ini requirements:
 gh_link=github_link
 twtr_link=twitter_link
 ```
+
+### Screenshots
+
+
+<img src="./docs/dark.png" alt="dark">
